@@ -1,9 +1,12 @@
 #!/bin/bash
 
+set -e
+
 useradd -s /bin/zsh -u 1000 -m workshop 
 
 mkdir -p /home/workshop/.ssh
 touch /home/workshop/.ssh/authorized_keys
+touch /home/workshop/.hushlogin
 
 chown -R workshop:workshop /home/workshop
 
