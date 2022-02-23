@@ -35,3 +35,12 @@ http://localhost:8080
 By default the Docker Compose setup picks up content from the `content` folder, which contains Markdown.
 
 Edit any of the files in this directory and save it. You can then refresh the browser page and the appropriate page should be updated.
+
+
+### Clean Up
+
+Close it down with Docker Compose
+
+```
+docker-compose down
+```
