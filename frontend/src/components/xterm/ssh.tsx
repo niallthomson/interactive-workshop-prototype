@@ -24,6 +24,23 @@ class SSHTerminal extends React.Component {
     });
     this.fitAddon.fit()
     this.configureSocket()
+    
+    window.addEventListener('resize', this.resizeScreen, false);
+
+    document.addEventListener('runSnippet', this.handleRunSnippet);
+  }
+
+  componentWillUnmount() {
+    this.socket.disconnect();
+  }
+
+  handleRunSnippet(e) {
+    console.log(e);
+  }
+
+  resizeScreen() {
+    this.fitAddon.fit();
+    this.socket.emit('resize', { cols: this.xtermRef.current.terminal.cols, rows: this.xtermRef.current.terminal.rows });
   }
 
   configureSocket = () => {

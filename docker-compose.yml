@@ -43,7 +43,6 @@ services:
     hostname: workshop
     volumes:
     - keys-volume:/keys
-    restart: unless-stopped
 
   nginx: 
     image: nginx:latest

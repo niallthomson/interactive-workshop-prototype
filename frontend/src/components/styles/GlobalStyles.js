@@ -277,6 +277,7 @@ export const baseStyles = css`
     padding-right: 20px;
     display: flex;
     align-items: center;
+    min-width: 400px;
   }
   .navBarBrand {
     padding: 0px 0px;
@@ -294,6 +295,7 @@ export const baseStyles = css`
   }
   .navBarUL {
     -webkit-overflow-scrolling: touch;
+    float: right;
   }
   .navBarUL li a {
     font-family: 'Roboto';
@@ -729,6 +731,7 @@ export const baseStyles = css`
   }
   .topnav {
     -webkit-transition: top 0.5s, bottom 0.5s;
+    width: 100%;
   }
 
   @media (max-width: 767px) {
