@@ -1,6 +1,11 @@
 FROM ubuntu:18.04
 
-RUN apt-get update && apt-get install -y openssh-server zsh curl nano wget git vim && mkdir /var/run/sshd
+RUN apt-get update && apt-get install -y openssh-server zsh curl nano wget git vim unzip sudo && mkdir /var/run/sshd
+
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
+  unzip awscliv2.zip && \
+  sudo ./aws/install && \
+  rm -rf awscliv2.zip ./aws
 
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
