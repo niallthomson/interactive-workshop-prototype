@@ -2,6 +2,7 @@ FROM ubuntu:18.04
 
 RUN apt-get update && apt-get install -y openssh-server zsh curl nano wget git vim unzip sudo && mkdir /var/run/sshd
 
+# TODO: Verify checksum (https://github.com/mikesir87/aws-cli-docker/blob/master/Dockerfile)
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
   unzip awscliv2.zip && \
   sudo ./aws/install && \
