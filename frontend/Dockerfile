@@ -1,9 +1,7 @@
-FROM node:buster
+FROM FROM node:16-buster
 
 # Create app directory
 WORKDIR /app
-
-ENV NODE_OPTIONS=--openssl-legacy-provider
 
 # Install app dependencies
 # RUN npm -g install serve
@@ -11,7 +9,7 @@ RUN npm -g install gatsby-cli
 
 COPY package*.json ./
 
-RUN npm ci
+RUN npm install
 
 # Bundle app source
 COPY . .
