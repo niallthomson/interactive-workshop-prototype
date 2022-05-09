@@ -12,6 +12,7 @@ services:
     - SSH_PORT=2222
     - SSH_USER=workshop
     - SSH_PRIVATE_KEY=/keys/id_rsa
+    - HASH='$HASH'
     healthcheck:
       test: 'curl localhost:3000/healthcheck'
       interval: "60s"
